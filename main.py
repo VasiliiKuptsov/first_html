@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 
 hostName ='localhost'
-serverPort = 8000
+serverPort = 8080
 
 
 class MyServer(BaseHTTPRequestHandler):
@@ -379,12 +379,12 @@ class MyServer(BaseHTTPRequestHandler):
 
 
     def  do_GET(self):
-        query.components = parse_qs(urlparse(self.path).query)
+        query_components = parse_qs(urlparse(self.path).query)
         page_content =self. __get_html_content()
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        self.wfile.write(bytes(page_content, utf-8))
+        self.wfile.write(bytes(page_content, "utf-8"))
 
 if __name__ == "__main__":
     webServer = HTTPServer((hostName, serverPort), MyServer)
