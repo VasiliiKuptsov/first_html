@@ -1,0 +1,17 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	
++++ b/main.py	(date 1734783233373)
+@@ -9,7 +9,7 @@
+     def __get_html_content(self):
+         with open('index.html', 'r') as f:
+ 
+-           return f.read()
++           return f
+ 
+ 
+ 
